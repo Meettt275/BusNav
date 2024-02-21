@@ -12,7 +12,7 @@ const LoginForm = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:8080/user/add", {
+      const response = await axios.post("http://localhost:8080/user/login", {
         username,
         password,
       });

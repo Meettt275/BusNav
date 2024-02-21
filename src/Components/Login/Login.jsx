@@ -33,8 +33,8 @@ const Login = () => {
     setLanguage(e.target.value);
   };
 
-  const handleSubmit =async (e) => {
-    e.preventDefault();
+  // const handleSubmit =async (e) => {
+    // e.preventDefault();
     // Add your form submission logic here
     // console.log('Name:', name);
     // console.log('Email:', email);
@@ -43,18 +43,47 @@ const Login = () => {
     // console.log('Gender:', gender);
     // console.log('Language:', language);
 
-    const response = await axios.post("http://localhost:8080/user/add", {
+  //   const response = await axios.post("http://localhost:8080/user/add", {
+  //     language,
+  //     email,
+  //     gender,
+  //     name,
+  //     password,
+  //     username,
+
+  //   });
+  //   console.log(response.data);
+
+  // };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await axios.post("http://localhost:8080/user/signup", {
       language,
       email,
       gender,
       name,
       password,
       username,
-
     });
-    console.log(response.data);
 
-  };
+    if (response.data === "Sign up Successful") {
+      // User signup successful
+      alert("Sign up Successful");
+      // Redirect or perform other actions as needed
+    } else {
+      // Username already registered
+      alert("Username is Already Registered!");
+    }
+  } catch (error) {
+    console.error("Error during signup:", error);
+    // Handle other errors, such as network issues or server errors
+    // Display appropriate error message to the user
+    alert("Error during signup. Please try again later.");
+  }
+};
+
 
   return (
     <div className="container_login">
@@ -133,5 +162,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
