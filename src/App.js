@@ -8,6 +8,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import AdminBuses from './Components/Admin/AdminBuses';
 import TicketDownload from './Components/Ticket/TicketDownload';
+import DropDown from './Components/Home/DropDown'
 
   
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path="/ad" element={<AdminBuses/>} />
 
           <Route path="/ticket" element={<TicketDownload />} />
+          <Route path="/dropdown" element={<DropDown />} />
+
 
 
 

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Select from "react-select";
+import { useNavigate } from 'react-router-dom';
+import DropDown from "./DropDown"; 
 import BusStationNames from "../BusStationNames/BusStationNames.jsx"; // Assuming this file is in the same directory
+import PassengerDetailForm from "./PassengerDetailForm.jsx"; // Import the component for passenger detail form
 
 const BookingForm = () => {
+  const navigate = useNavigate();
+
   const [fromCity, setFromCity] = useState("");
   const [departureCity, setDepartureCity] = useState("");
   const [departureDate, setDepartureDate] = useState("");
@@ -11,6 +16,7 @@ const BookingForm = () => {
   const [availableBuses, setAvailableBuses] = useState([]);
   const [show, setShow] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [showPassengerForm, setShowPassengerForm] = useState(false); // State to manage whether passenger detail form should be displayed
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,20 +59,22 @@ const BookingForm = () => {
     label: station.city,
   }));
 
-  // const handleFromCityChange = (selectedOption) => {
-  //   setFromCity(selectedOption);
-  // };
-
-  // const handleDepartureCityChange = (selectedOption) => {
-  //   setDepartureCity(selectedOption);
-  // };
-
   const handleDepartureDateChange = (e) => {
     setDepartureDate(e.target.value);
   };
 
   const handlePassengersChange = (e) => {
     setNoOfPassengers(parseInt(e.target.value));
+  };
+
+  const handleBookButtonClick = () => {
+    // Logic to book the selected bus
+    // For demonstration purposes, just show the passenger detail form
+    // navigate("/passenger-detail");
+    // setShowPassengerForm(true);
+    navigate("/dropdown");
+
+
   };
 
   return (
@@ -125,11 +133,17 @@ const BookingForm = () => {
                 </li>
               ))}
             </ul>
+            <button onClick={handleBookButtonClick} className="bookbutton">
+              Book Bus
+            </button>
           </div>
         )}
-                {errorMessage && <p>{errorMessage}</p>}
-
+        {errorMessage && <p>{errorMessage}</p>}
       </form>
+      {/* Conditionally render the passenger detail form */}
+      {showPassengerForm && (
+        <PassengerDetailForm onClose={() => setShowPassengerForm(false)} />
+      )}
     </div>
   );
 };

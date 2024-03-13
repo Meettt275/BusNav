@@ -119,7 +119,7 @@ const TicketDownload = () => {
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mt-3 border ">
                   <strong>Arrival</strong>
-                  <h6>{"Surat Central Bus Depot"}</h6>
+                  <h6>{"Nadiad Central Bus Depot"}</h6>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mt-3 border ">
                   <strong>Bus PNR</strong>
