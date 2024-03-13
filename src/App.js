@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import AdminBuses from './Components/Admin/AdminBuses';
+import TicketDownload from './Components/Ticket/TicketDownload';
 
   
 function App() {
@@ -20,6 +21,8 @@ function App() {
           <Route path="/admin" element={<BusForm />} />
           <Route path="/reg" element={<Login />} />
           <Route path="/ad" element={<AdminBuses/>} />
+
+          <Route path="/ticket" element={<TicketDownload />} />
 
 
 

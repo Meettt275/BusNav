@@ -41,7 +41,7 @@ const TicketDownload = () => {
   return (
     <>
       <section style={{ height: "100vh", overflowY: "scroll" }}>
-        <div className="p-3 border border-dark" >
+        <div className="p-3 border border-dark">
           <div class="d-flex justify-content-end m-2">
             <button
               type="button"
@@ -54,7 +54,7 @@ const TicketDownload = () => {
           <div className="border border-dark rounded-5" ref={pdfRef}>
             <div className="d-flexflex-coloumn justify-content-center align-items-center flex-wrap ">
               <h2 className="text-center bg-primary text-white py-2">
-                SkyOps Pro
+                BusNav
               </h2>
               <h3 className="text-center text-dark py-2">
                 Booking Confirmation
@@ -72,7 +72,7 @@ const TicketDownload = () => {
             </div>
             <div className="d-flex justify-content-between mx-2">
               <h6 className="mx-1">Confirmation ID :{" 123456789"}</h6>
-              <h6 className="mx-1">Booking Date : {"25/04/2025"}</h6>
+              <h6 className="mx-1">Booking Date : {"25/03/2024"}</h6>
             </div>
             <div className="table-responsive-sm mx-3">
               <table className="table mt-3 table-bordered">
@@ -105,24 +105,24 @@ const TicketDownload = () => {
               <div className="row mx-1 d-flex justify-content-center">
                 <div className="col-12 mt-3 border ">
                   <h3 className="ms-2 ">
-                    {"Surat"} to {"Delhi"}{" "}
+                    {"Surat"} to {"Nadiad"}{" "}
                     <span style={{ color: "green" }}>(Confirmed)</span>
                   </h3>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mt-3 border ">
-                  <h3 className="text-primary">{"IndiGo"}</h3>
+                  <h3 className="text-primary">{"Volvo ST_ND"}</h3>
                   <h5>{"6E-517"}</h5>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mt-3 border ">
                   <strong>Departure</strong>
-                  <h6>{"Delhi (IndiGo Indira Gandhi International, ID)"}</h6>
+                  <h6>{"Surat Central Bus Depot"}</h6>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mt-3 border ">
                   <strong>Arrival</strong>
-                  <h6>{"Delhi (IndiGo Indira Gandhi International, ID)"}</h6>
+                  <h6>{"Surat Central Bus Depot"}</h6>
                 </div>
                 <div className="col-12 col-sm-6 col-md-3 mt-3 border ">
-                  <strong>Airline PNR</strong>
+                  <strong>Bus PNR</strong>
                   <h3 className="mb-0">{"6E-L6T5SF"}</h3>
                 </div>
               </div>
@@ -134,33 +134,31 @@ const TicketDownload = () => {
                   <tbody>
                     <tr>
                       <td className="fw-bold">Basic Fare:</td>
-                      <td>4X1150 Adult,OXO Child,OXO Infant,</td>
+                      <td>3 X 150 Adult,O X O Child,O X O Infant,</td>
                     </tr>
 
                     <tr>
                       <td className="fw-bold">Total Base Fare:</td>
-                      <td>INR 4600</td>
+                      <td>INR 450</td>
                     </tr>
                     <tr>
                       <td className="fw-bold">Total taxes and fees:</td>
-                      <td>INR 4480</td>
+                      <td>INR 80</td>
                     </tr>
                     <tr>
                       <td className="fw-bold">Grand Total:</td>
-                      <td>INR 9080</td>
+                      <td>INR 530</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <h3 className="text-primary">
-                Terms and conditions of IndigoAir:
-              </h3>
+              <h3 className="text-primary">Terms and conditions of BusNav:</h3>
               <div className="px-3">
                 <p>
-                  {"->"} All Guests, including children and infants, must
+                  {"->"} All passengers, including children and infants, must
                   present valid identification at check-in.
                   <br />
-                  {"->"} Check-in begins 2 hours prior to the flight for seat
+                  {"->"} Check-in begins 2 hours prior to the departure for seat
                   assignment and closes 60 minutes prior to the scheduled
                   departure.
                   <br />
@@ -169,21 +167,18 @@ const TicketDownload = () => {
                   incorporated by reference. These conditions may be obtained
                   from the issuing carrier.
                   <br />
-                  {"->"} Indian allows its Guests to check-in up to 15 kg of
-                  luggage per paying passenger. Baggage in excess of 15 kg is
-                  subject to a fee to be paid at the airport at check-in.
+                  {"->"} Cancellation Charges shall be as per bus operator
+                  rules.
                   <br />
-                  {"->"} Cancellation Charges shall be as per airline rules.
-                  <br />
-                  {"->"} For any queries please contact IndiGo at
+                  {"->"} For any queries please contact Bus Operator at
                   18001803838/9910383838 for all MTNL/BSNL phones.
                   <br />
-                  {"->"} Please check the figures/timings as they may change
-                  time to time without any notice to the passenger.
+                  {"->"} Please check the schedule and timings as they may
+                  change from time to time without notice to the passenger.
                   <br />
-                  {"->"} For Delhi-Mumbai Travel Sectors/Customer Needs to
-                  recheck the departure and arrival terminals again with the
-                  airlines prior 24 hours of flight scheduled timings.
+                  {"->"} For specific travel sectors, passengers need to recheck
+                  the departure and arrival terminals with the bus operator 24
+                  hours prior to the scheduled departure.
                 </p>
               </div>
             </div>
