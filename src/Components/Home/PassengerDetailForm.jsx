@@ -4,25 +4,25 @@ import axios from "axios";
 
 
 const PassengerDetailForm = ({ onClose }) => {
-  const [passengerName, setPassengerName] = useState("");
-  const [passengerEmail, setPassengerEmail] = useState("");
-  const [passengerGender, setPassengerGender] = useState("");
+  const [name, setPassengerName] = useState("");
+  const [email, setPassengerEmail] = useState("");
+  const [gender, setPassengerGender] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you can handle the form submission logic
     // For demonstration purposes, just logging the form data
     const response = await axios.post("http://localhost:8080/Passenger/add", {
-      passengerName,
-      passengerEmail,
-      passengerGender,
+      name,
+      email,
+      gender,
       
     });
     console.log(response.data);
   
-    console.log("Passenger Name:", passengerName);
-    console.log("Passenger Age:", passengerEmail);
-    console.log("Passenger Gender:", passengerGender);
+    // console.log("Passenger Name:", passenger_name);
+    // console.log("Passenger Age:", passengerEmail);
+    // console.log("Passenger Gender:", passengerGender);
     // Close the passenger detail form
     // onClose();
   };
@@ -32,11 +32,11 @@ const PassengerDetailForm = ({ onClose }) => {
       <h2>Passenger Details</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="passengerName">Name:</label>
+          <label htmlFor="passenger_name">Name:</label>
           <input
             type="text"
-            id="passengerName"
-            value={passengerName}
+            id="passenger_name"
+            value={name}
             onChange={(e) => setPassengerName(e.target.value)}
             required
           />
@@ -46,7 +46,7 @@ const PassengerDetailForm = ({ onClose }) => {
           <input
             type="text"
             id="passengerEmail"
-            value={passengerEmail}
+            value={email}
             onChange={(e) => setPassengerEmail(e.target.value)}
             required
           />
@@ -55,7 +55,7 @@ const PassengerDetailForm = ({ onClose }) => {
           <label htmlFor="passengerGender">Gender:</label>
           <select
             id="passengerGender"
-            value={passengerGender}
+            value={gender}
             onChange={(e) => setPassengerGender(e.target.value)}
             required
           >
