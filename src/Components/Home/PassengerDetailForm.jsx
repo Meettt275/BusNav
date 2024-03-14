@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import "./PassengerDetailForm.css";
+import axios from "axios";
+
 
 const PassengerDetailForm = ({ onClose }) => {
   const [passengerName, setPassengerName] = useState("");
   const [passengerEmail, setPassengerEmail] = useState("");
   const [passengerGender, setPassengerGender] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you can handle the form submission logic
     // For demonstration purposes, just logging the form data
+    const response = await axios.post("http://localhost:8080/Passenger/add", {
+      passengerName,
+      passengerEmail,
+      passengerGender,
+      
+    });
+    console.log(response.data);
+  
     console.log("Passenger Name:", passengerName);
     console.log("Passenger Age:", passengerEmail);
     console.log("Passenger Gender:", passengerGender);
     // Close the passenger detail form
-    onClose();
+    // onClose();
   };
 
   return (
