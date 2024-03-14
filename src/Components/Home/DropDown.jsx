@@ -3,7 +3,7 @@ import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const Selector = () => {
-  const [countries, setCountries] = useState(null);
+  const [cities, setCities] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState("");
   const [open, setOpen] = useState(false);
@@ -27,7 +27,7 @@ const Selector = () => {
           ? selected?.length > 25
             ? selected?.substring(0, 25) + "..."
             : selected
-          : "Select Country"}
+          : "Select City"}
         <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
       </div>
       <ul
@@ -41,32 +41,32 @@ const Selector = () => {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value.toLowerCase())}
-            placeholder="Enter country name"
+            placeholder="Enter City name"
             className="placeholder:text-gray-700 p-2 outline-none"
           />
         </div>
-        {countries?.map((country) => (
+        {cities?.map((city) => (
           <li
-            key={country?.name}
+            key={city?.name}
             className={`p-2 text-sm hover:bg-sky-600 hover:text-white
             ${
-              country?.name?.toLowerCase() === selected?.toLowerCase() &&
+              city?.name?.toLowerCase() === selected?.toLowerCase() &&
               "bg-sky-600 text-white"
             }
             ${
-              country?.name?.toLowerCase().startsWith(inputValue)
+              city?.name?.toLowerCase().startsWith(inputValue)
                 ? "block"
                 : "hidden"
             }`}
             onClick={() => {
-              if (country?.name?.toLowerCase() !== selected.toLowerCase()) {
-                setSelected(country?.name);
+              if (city?.name?.toLowerCase() !== selected.toLowerCase()) {
+                setSelected(city?.name);
                 setOpen(false);
                 setInputValue("");
               }
             }}
           >
-            {country?.name}
+            {city?.name}
           </li>
         ))}
       </ul>

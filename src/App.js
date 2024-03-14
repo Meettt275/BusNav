@@ -9,6 +9,7 @@ import Login from './Components/Login/Login';
 import AdminBuses from './Components/Admin/AdminBuses';
 import TicketDownload from './Components/Ticket/TicketDownload';
 import DropDown from './Components/Home/DropDown'
+import PassengerDetailForm from './Components/Home/PassengerDetailForm';
 
   
 function App() {
@@ -25,6 +26,9 @@ function App() {
 
           <Route path="/ticket" element={<TicketDownload />} />
           <Route path="/dropdown" element={<DropDown />} />
+          <Route path="/PassengerForm" element={<PassengerDetailForm />} />
+
+
 
 
 

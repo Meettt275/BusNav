@@ -32,9 +32,9 @@ const BookingForm = () => {
     }
   };
 
-  useEffect(() => {
-    handleSubmit();
-  }, []);
+  // useEffect(() => {
+  //   handleSubmit();
+  // }, []);
 
   const handleFromCityChange = (selectedOption) => {
     setFromCity(selectedOption);
@@ -72,7 +72,7 @@ const BookingForm = () => {
     // For demonstration purposes, just show the passenger detail form
     // navigate("/passenger-detail");
     // setShowPassengerForm(true);
-    navigate("/dropdown");
+    navigate("/PassengerForm");
 
 
   };
