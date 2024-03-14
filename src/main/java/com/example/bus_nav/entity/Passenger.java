@@ -7,16 +7,16 @@ public class Passenger {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long passengerId;
-    private String name;
-    private String email;
-    private String Gender;
+    private String passengerName;
+    private String passengerEmail;
+    private String passengerGender;
 
     public String getGender() {
-        return Gender;
+        return passengerGender;
     }
 
     public void setGender(String gender) {
-        Gender = gender;
+        passengerGender = gender;
     }
 
     @OneToMany(mappedBy = "passenger")
@@ -31,19 +31,19 @@ public class Passenger {
     }
 
     public String getName() {
-        return name;
+        return passengerName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.passengerName = name;
     }
 
     public String getEmail() {
-        return email;
+        return passengerEmail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.passengerEmail = email;
     }
 
     public List<Ticket> getTickets() {
