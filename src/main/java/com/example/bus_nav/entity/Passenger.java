@@ -9,6 +9,16 @@ public class Passenger {
     private Long passengerId;
     private String name;
     private String email;
+    private String Gender;
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+
     @OneToMany(mappedBy = "passenger")
     private List<Ticket> tickets;
 
