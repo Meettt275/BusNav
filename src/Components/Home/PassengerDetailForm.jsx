@@ -3,7 +3,7 @@ import "./PassengerDetailForm.css";
 
 const PassengerDetailForm = ({ onClose }) => {
   const [passengerName, setPassengerName] = useState("");
-  const [passengerAge, setPassengerAge] = useState("");
+  const [passengerEmail, setPassengerEmail] = useState("");
   const [passengerGender, setPassengerGender] = useState("");
 
   const handleSubmit = (e) => {
@@ -11,7 +11,7 @@ const PassengerDetailForm = ({ onClose }) => {
     // Here you can handle the form submission logic
     // For demonstration purposes, just logging the form data
     console.log("Passenger Name:", passengerName);
-    console.log("Passenger Age:", passengerAge);
+    console.log("Passenger Age:", passengerEmail);
     console.log("Passenger Gender:", passengerGender);
     // Close the passenger detail form
     onClose();
@@ -32,12 +32,12 @@ const PassengerDetailForm = ({ onClose }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="passengerAge">Age:</label>
+          <label htmlFor="passengerEmail">Email:</label>
           <input
-            type="number"
-            id="passengerAge"
-            value={passengerAge}
-            onChange={(e) => setPassengerAge(e.target.value)}
+            type="text"
+            id="passengerEmail"
+            value={passengerEmail}
+            onChange={(e) => setPassengerEmail(e.target.value)}
             required
           />
         </div>
