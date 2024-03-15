@@ -3,7 +3,7 @@ import "./PassengerDetailForm.css";
 import axios from "axios";
 
 
-const PassengerDetailForm = ({ onClose }) => {
+const PassengerDetailForm = ({ onBookingComplete }) => {
   const [name, setPassengerName] = useState("");
   const [email, setPassengerEmail] = useState("");
   const [gender, setPassengerGender] = useState("");
@@ -25,6 +25,9 @@ const PassengerDetailForm = ({ onClose }) => {
     // console.log("Passenger Gender:", passengerGender);
     // Close the passenger detail form
     // onClose();
+
+    onBookingComplete();
+
   };
 
   return (
@@ -67,7 +70,7 @@ const PassengerDetailForm = ({ onClose }) => {
         </div>
         <div className="form-group">
           <button type="submit" className="submit-button">
-            Submit
+            Book Ticket
           </button>
         </div>
       </form>
