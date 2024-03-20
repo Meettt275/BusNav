@@ -11,6 +11,19 @@ public class Passenger {
     private String passenger_email;
     private String passenger_gender;
 
+
+    @ManyToOne
+    @JoinColumn(name = "ticket_id")
+    private Ticket ticket;
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
     public String getGender() {
         return passenger_gender;
     }
@@ -19,8 +32,8 @@ public class Passenger {
         passenger_gender = gender;
     }
 
-    @OneToMany(mappedBy = "passenger")
-    private List<Ticket> tickets;
+//    @OneToMany(mappedBy = "passenger")
+//    private List<Ticket> tickets;
 
     public Long getPassengerId() {
         return passengerId;
@@ -46,11 +59,11 @@ public class Passenger {
         this.passenger_email = email;
     }
 
-    public List<Ticket> getTickets() {
-        return tickets;
-    }
-
-    public void setTickets(List<Ticket> tickets) {
-        this.tickets = tickets;
-    }
+//    public List<Ticket> getTickets() {
+//        return tickets;
+//    }
+//
+//    public void setTickets(List<Ticket> tickets) {
+//        this.tickets = tickets;
+//    }
 }
