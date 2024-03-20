@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 
 @Entity
 public class User {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable=false)
@@ -13,7 +13,6 @@ public class User {
 //    @Id
     @Column(nullable=false)
     private String email;
-    @Id
     @Column(nullable=false)
     private String username;
     @Column(nullable=false)
