@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import axios from "axios";
 import Select from "react-select";
 import { useNavigate } from 'react-router-dom';
-import DropDown from "./DropDown"; 
+// import DropDown from "./DropDown"; 
 import BusStationNames from "../BusStationNames/BusStationNames.jsx"; // Assuming this file is in the same directory
 import PassengerDetailForm from "./PassengerDetailForm.jsx"; // Import the component for passenger detail form
-
+import TicketBookingForm from "./TicketBookingForm.jsx";
 const BookingForm = () => {
   const navigate = useNavigate();
 
@@ -73,6 +73,7 @@ const BookingForm = () => {
     // navigate("/passenger-detail");
     // setShowPassengerForm(true);
     navigate("/PassengerForm");
+    // navigate("/TicketBookingForm");
 
 
   };
@@ -143,6 +144,7 @@ const BookingForm = () => {
       {/* Conditionally render the passenger detail form */}
       {showPassengerForm && (
         <PassengerDetailForm onClose={() => setShowPassengerForm(false)} />
+        // <TicketBookingForm onClose={()=>setShowPassengerForm(false)}/>
       )}
     </div>
   );
