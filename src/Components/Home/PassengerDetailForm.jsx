@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import './PassengerDetailForm.css'
 const PassengerDetailForm = ({ onBookingComplete }) => {
+
+  const navigate = useNavigate();
   const [passengers, setPassengers] = useState([
     { passengerName: "", seatNumber: "" }, // Initial state for the first passenger
   ]);
@@ -20,12 +23,13 @@ const PassengerDetailForm = ({ onBookingComplete }) => {
             seatNumber: passenger.seatNumber,
           });
           return response.data;
+
         })
       );
 
       // Set the ticket numbers for each passenger
       setTicketNumber(tickets.join(", ")); // Assuming ticket numbers are returned as strings
-
+      
       // Clear any previous errors
       setError("");
     } catch (error) {

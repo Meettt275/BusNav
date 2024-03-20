@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './Login.css';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUserName] = useState('');
@@ -55,6 +58,7 @@ const Login = () => {
   //   console.log(response.data);
 
   // };
+ 
   const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -67,10 +71,11 @@ const Login = () => {
       password,
       username,
     });
-
+    // console(response.data);
     if (response.data === "Sign up Successful") {
       // User signup successful
       alert("Sign up Successful");
+      navigate("/login");
       // Redirect or perform other actions as needed
     } else {
       // Username already registered
@@ -144,7 +149,7 @@ const Login = () => {
           </div>
 
           <label>Language:</label>
-          <select
+           <select
             value={language}
             onChange={handleLanguageChange}
           >
@@ -154,9 +159,9 @@ const Login = () => {
             <option value="english">English</option>
             <option value="spanish">Spanish</option>
             <option value="french">French</option>
-          </select>
+          </select> 
 
-          <button className='signupbutton' type="submit">Submit</button>
+          <button className='signupbutton' type="submit" >Submit</button>
         </form>
       </div>
     </div>

@@ -4,8 +4,10 @@ import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,6 +19,7 @@ const LoginForm = () => {
         password,
       });
       console.log(response.data);
+      navigate("/home")
       // Handle successful login
     } catch (error) {
       console.error("Login error:", error);
